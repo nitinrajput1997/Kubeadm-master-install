@@ -63,3 +63,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```bash
 kubectl get po -A
 ```
+
+## Uninstall Kubeadm
+```bash
+kubeadm reset --ignore-preflight-errors=all
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*   
+sudo apt-get autoremove  
+sudo rm -rf ~/.kube
+```
